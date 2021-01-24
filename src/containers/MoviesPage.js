@@ -12,6 +12,9 @@ const MoviesPage = ({ match, movies }) => (
     <MoviesList movies={movies} />
     // We also add a `Route` component that will render `MovieShow`
     // when a movie is selected
+    
+     // Here we replace the `component` prop with the `render` prop so we can pass the 
+    // route information to the `MovieShow` component
      <Route path={`${match.url}/:movieId`} render={routerProps => <MovieShow {...routerProps} movies={movies} /> }/>
   </div>
 )
