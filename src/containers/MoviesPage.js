@@ -10,9 +10,9 @@ import MovieShow from '../components/MovieShow';
 const MoviesPage = ({ match, movies }) => (
   <div>
     <MoviesList movies={movies} />
-     // Here we replace the `component` prop with the `render` prop so we can pass the 
-    // route information to the `MovieShow` component
-     <Route path={`${match.url}/:movieId`} render={routerProps => <MovieShow {...routerProps} movies={movies} /> }/>
+       // Adding code to show a message to the user to select a movie if they haven't yet
+    <Route exact path={match.url} render={() => <h3>Choose a movie from the list above</h3>}/>
+    <Route path={`${match.url}/:movieId`} render={routerProps => <MovieShow {...routerProps} movies={movies} /> }/>
   </div>
 )
  
